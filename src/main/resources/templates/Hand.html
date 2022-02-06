@@ -6,52 +6,30 @@
     <link rel="stylesheet" href="../css/main.css" th:href="@{css/main.css}">
 </head>
 <body>
+<form action="Output.html" th:action="@{process}" th:object="${hand}">
 <header>
     <h1>Rock Paper Scissors</h1>
 </header>
-<main>
-    <div id="computerID">
+    <div>
         <p>
-            AI picked
-            <span th:text="${hand.computer}">Scissors</span>
-            <hr>
-            <img width="244" height="244" src="../images/Scissors.png"
-                 th:src="'../resources/images/'+ ${hand.computer} + '.png'">
+            <label><input name="message" type="radio" th:field="*{message}" th:value="0">Rock</label><br>
+            <label><input name="message" type="radio" th:field="*{person}" th:value="1">Paper</label><br>
+            <label><input name="message" type="radio" th:field="*{person}" th:value="2">Scissors</label>
         </p>
-    </div>
 
-    <div th:switch="${hand.personHand}">
-        <label><input type="radio" th:field="*{hand._message}" th:value="Rock">Rock</label><br>
-        <label><input type="radio" th:field="*{hand._message}" th:value="Paper">Paper</label><br>
-        <label><input type="radio" th:field="*{hand._message}" th:value="Scissors">Scissors</label>
         <!--<p>
             <label><input type="radio" th:field="*{message}" th:value="Rock">Rock</label><br>
             <label><input type="radio" th:field="*{message}" th:value="Paper">Paper</label><br>
             <label><input type="radio" th:field="*{message}" th:value="Scissors">Scissors</label>
         </p>-->
     </div>
-
-    <div id="userID">
-        <p>
-            You picked
-            <span class="userName" th:text="${hand.person}">Scissors</span>
-        <hr>
-        <br>
-        <img width="244" height="244" src="../images/Scissors.png"
-             th:src="'../resources/images/'+ ${hand.person} + '.png'">
-        </p>
-
-    </div>
-        <div>
             <p>
-                You
-                <span class="answerID" th:text="${hand.answer}">Tied</span>
-            </p>
-            <p>
-                <a href="Hand.html" th:href="@{random-hand}">try again</a>
+                <a href="Output.html" th:href="@{random-hand}">try again</a>
             </p>
         </div>
     <br>
+</form>
+</body>
 </main>
 <footer>
     Sheridan College&nbsp;2022

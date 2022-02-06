@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css" th:href="@{css/main.css}">
+    <title>Output</title>
+</head>
+<body>
+<h1>Output</h1>
+<div id="computerID">
+    <p>
+        AI picked
+        <span th:text="${hand.computer}"></span>
+    <hr>
+    <img width="244" height="244"
+         th:src="'../resources/images/'+ ${hand.computer} + '.png'">
+    </p>
+</div>
+<div id="userID">
+    <p>
+        You picked
+        <span th:text="${hand.person}"></span>
+    <hr>
+    <img width="244" height="244" th:src="'../resources/images/'+ ${hand.person} + '.png'">
+    </p>
+</div>
+<p>
+    <a href="Hand.html" th:href="@{hand}">Back to Input</a>
+</p>
+</body>
+</html>
+
