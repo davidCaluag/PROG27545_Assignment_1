@@ -2,66 +2,63 @@
 
 package sheridan.caluagd.davidcaluag_assignment1.handRoll;
 
-public class HandRoll {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class HandRoll implements Serializable {
 
     private final static String[] _hand
             = {"Rock", "Paper", "Scissors"};
 
-    final private String personHand;
-    final private String computerHand;
-    final private String _answer;
+    private String personHand;
+    private String computerHand;
+    private String _answer;
 
     public HandRoll() {
-        int personRand = (int) (2 * Math.random());
-        int computerRand = (int) (2 * Math.random());
-        personHand = _hand[personRand];
-        computerHand = _hand[computerRand];
-        _answer = findAnswer(personHand,computerHand);
-
     }
 
     public String getComputer() {
         return computerHand;
     }
 
-    public String getUser() {
+    public String getPerson() {
         return personHand;
     }
 
+    public void setPerson(String userHand) {this.personHand = userHand;};
+
+    public void setComputer(){
+        int computerRand = (int) (2 * Math.random());
+        this.computerHand = _hand[computerRand];
+    }
+
+    public void setAnswer(){
+        _answer = findAnswer(personHand,computerHand);
+    }
+
+    public String getAnswer() {
+        return _answer;
+    }
+
     public String findAnswer(String answer, String compare){
-        String returnAnswer="N/A";
-        if(answer!=compare){
+        String returnAnswer = null;
+        if(!Objects.equals(answer, compare)){
             switch(answer){
                 case "Rock":
-                    if(compare=="Scissors")
-                        returnAnswer = "Lost";
-                    else{
-                        returnAnswer = "Won";
-                    }
+                    returnAnswer = Objects.equals(compare, "Paper")? "Lost" : "Won";
                     break;
                 case "Scissors":
-                    if(compare=="Rock")
-                        returnAnswer = "Lost";
-                    else{
-                        returnAnswer = "Won";
-                    }
-                        break;
+                    returnAnswer = Objects.equals(compare, "Rock")? "Lost" : "Won";
+                    break;
                 case "Paper":
-                    if(compare=="Scissors"){
-                        returnAnswer = "Lost";
-                    }
-                    else{
-                        returnAnswer = "Won";
-                    }
+                    returnAnswer = Objects.equals(compare, "Scissors")? "Lost" : "Won";
                     break;
             }
         }
         else{
             returnAnswer = "Tied";
         };
-
-        return returnAnswer;
-
+    return returnAnswer;
     }
     }
 
