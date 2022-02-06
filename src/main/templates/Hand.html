@@ -11,20 +11,25 @@
 <main>
     <div id="computerID">
         <p>
-            AI picked
-            <span class="computerName" th:text="${hand.computer}">Scissors</span>
+            AI picked <span th:text="${}"></span>
+            <span class="computerName" th:text="${hand.computerHand}">Scissors</span>
         </p>
     </div>
 
     <div id="userID">
         <p>
             You picked
-            <span class="userName" th:text="${hand.user}">Scissors</span>
+            <span class="userName" th:text="${hand.personHand}">Scissors</span>
+        </p>
+        <p>
+            You
+            <span class="answerID" th:text="${hand._answer}">?</span>
         </p>
         <p>
             <a href="Hand.html" th:href="@{random-hand}">try again</a>
         </p>
     </div>
+
 
 </main>
 <footer>

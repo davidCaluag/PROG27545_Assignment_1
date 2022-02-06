@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import sheridan.caluagd.davidcaluag_assignment1.handRoll.handRoll;
+import sheridan.caluagd.davidcaluag_assignment1.handRoll.HandRoll;
 
 @Controller
 public class HandController {
@@ -16,7 +16,7 @@ public class HandController {
     public String hand(Model model){
         logger.trace("hand() is called");
 
-        handRoll hand =new handRoll();
+        HandRoll hand =new HandRoll();
         logger.debug("hand = " + hand);
 
         model.addAttribute("hand", hand);
