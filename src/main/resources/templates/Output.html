@@ -10,20 +10,34 @@
 <div id="computerID">
     <p>
         AI picked
-        <span th:text="${hand.computer}"></span>
+        <span th:text="${hand.getComputer()}"></span>
     <hr>
     <img width="244" height="244"
          th:src="'../resources/images/'+ ${hand.computer} + '.png'">
     </p>
 </div>
-<div id="userID">
+
+<!--
+<div th:switch="${hand.message}">
+<p th:case="0">Rock</p>
+    <p th:case="1">Paper</p>
+    <p th:case="2">Scissors</p>
+
+^ Doesn't work.
+-->
+<div>
     <p>
         You picked
         <span th:text="${hand.person}"></span>
     <hr>
-    <img width="244" height="244" th:src="'../resources/images/'+ ${hand.person} + '.png'">
+    <img width="244" height="244"
+         th:src="'../resources/images/'+ ${hand.person} + '.png'">
     </p>
 </div>
+</div>
+<p>
+    You <span th:text="${hand.getAnswer()}"></span>
+</p>
 <p>
     <a href="Hand.html" th:href="@{hand}">Back to Input</a>
 </p>

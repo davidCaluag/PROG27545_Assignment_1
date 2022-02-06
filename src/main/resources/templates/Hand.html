@@ -12,9 +12,9 @@
 </header>
     <div>
         <p>
-            <label><input name="message" type="radio" th:field="*{message}" th:value="0">Rock</label><br>
-            <label><input name="message" type="radio" th:field="*{person}" th:value="1">Paper</label><br>
-            <label><input name="message" type="radio" th:field="*{person}" th:value="2">Scissors</label>
+            <label><input name="message" type="radio" th:field="*{message}" th:value="0" checked>Rock</label><br>
+            <label><input name="message" type="radio" th:field="*{message}" th:value="1">Paper</label><br>
+            <label><input name="message" type="radio" th:field="*{message}" th:value="2">Scissors</label>
         </p>
 
         <!--<p>
@@ -24,7 +24,7 @@
         </p>-->
     </div>
             <p>
-                <a href="Output.html" th:href="@{random-hand}">try again</a>
+                <input type="submit" value="Send">
             </p>
         </div>
     <br>

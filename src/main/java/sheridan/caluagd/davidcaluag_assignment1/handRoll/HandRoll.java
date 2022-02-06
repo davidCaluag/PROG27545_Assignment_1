@@ -11,10 +11,10 @@ public class HandRoll implements Serializable {
             = {"Rock", "Paper", "Scissors"};
 
 
-    private String personHand;
-    private String computerHand;
-    private String _answer;
-    private int _messsage=0;
+    private String personHand="Scissors";
+    private String computerHand="Scissors";
+    private String _answer = getAnswer();
+    private int _message=0;
 
     public HandRoll() {
     };
@@ -23,8 +23,10 @@ public class HandRoll implements Serializable {
         return _message;
     }
 
+    public void setMessage(int message){this._message = message;}
 
     public String getComputer() {
+        setComputer();
         return computerHand;
     }
 
@@ -38,11 +40,8 @@ public class HandRoll implements Serializable {
     }
 
     public void setPerson(String userHand) {
-        this.personHand = userHand;
+        this.personHand = _hand[_message];
     }
-
-    ;
-
 
     public void setAnswer() {
         _answer = findAnswer(personHand, computerHand);
@@ -77,7 +76,9 @@ public class HandRoll implements Serializable {
     public String toString() {
         return "HandRoll{" +
                 "personHand=" + personHand +
-                "computerHand=" + computerHand +
+                ",computerHand=" + computerHand +
+                ",_answer=" + _answer+
+                ",_message="+_message+
                 '}';
     }
 }

@@ -29,7 +29,7 @@ public class HandController {
             @Validated @ModelAttribute HandRoll hand,
             BindingResult bindingResult){
         logger.trace("process() is called");
-        logger.debug("handRoll = " + hand);
+        logger.debug("handRoll=" + hand);
         if(bindingResult.hasErrors()){
             return new ModelAndView("Hand");
         }
