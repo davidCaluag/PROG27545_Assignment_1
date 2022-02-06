@@ -2,22 +2,24 @@
 
 package sheridan.caluagd.davidcaluag_assignment1.handRoll;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class HandRoll implements Serializable {
+public class HandRoll {
 
     private final static String[] _hand
             = {"Rock", "Paper", "Scissors"};
 
-    private String personHand;
-    private String computerHand;
-    private String _answer;
+    public String personHand;
+    public String computerHand;
+    public String _answer;
+    public String _message;
 
     public HandRoll() {
     }
 
     public String getComputer() {
+        int computerRand = (int) (2 * Math.random());
+        this.computerHand = _hand[computerRand];
         return computerHand;
     }
 
@@ -27,16 +29,13 @@ public class HandRoll implements Serializable {
 
     public void setPerson(String userHand) {this.personHand = userHand;};
 
-    public void setComputer(){
-        int computerRand = (int) (2 * Math.random());
-        this.computerHand = _hand[computerRand];
-    }
 
     public void setAnswer(){
         _answer = findAnswer(personHand,computerHand);
     }
 
     public String getAnswer() {
+        _answer = findAnswer(personHand,computerHand);
         return _answer;
     }
 
@@ -56,9 +55,17 @@ public class HandRoll implements Serializable {
             }
         }
         else{
-            returnAnswer = "Tied";
+            returnAnswer = "tied";
         };
     return returnAnswer;
+    }
+
+    @Override
+    public String toString() {
+        return "Envelope{" +
+                "message=" + message +
+                ", registered=" + registered +
+                '}';
     }
     }
 
