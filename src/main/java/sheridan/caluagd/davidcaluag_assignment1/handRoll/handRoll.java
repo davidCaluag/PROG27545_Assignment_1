@@ -1,4 +1,4 @@
-package sheridan.caluagd.davidcaluag_assignment1;
+package sheridan.caluagd.davidcaluag_assignment1.handRoll;
 
 public class handRoll {
 

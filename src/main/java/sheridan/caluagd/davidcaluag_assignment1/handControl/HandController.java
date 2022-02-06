@@ -1,16 +1,16 @@
-package sheridan.caluagd.davidcaluag_assignment1;
+package sheridan.caluagd.davidcaluag_assignment1.handControl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import sheridan.caluagd.davidcaluag_assignment1.handRoll;
+import sheridan.caluagd.davidcaluag_assignment1.handRoll.handRoll;
 
 @Controller
-public class handController {
+public class HandController {
 
-    private final Logger logger = LoggerFactory.getLogger(handController.class);
+    private final Logger logger = LoggerFactory.getLogger(HandController.class);
 
     @GetMapping(value={"/", "/random-hand"})
     public String hand(Model model){
