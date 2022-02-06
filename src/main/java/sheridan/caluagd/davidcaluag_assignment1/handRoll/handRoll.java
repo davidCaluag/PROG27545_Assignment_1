@@ -1,3 +1,5 @@
+//David Caluag, Sheridan,Ontario
+
 package sheridan.caluagd.davidcaluag_assignment1.handRoll;
 
 public class handRoll {
@@ -15,7 +17,11 @@ public class handRoll {
         computerHand = _hand[computerRand];
     }
 
-    public String getHand() {
-        return personHand;
+    public String getComputer() {
+        return computerHand;
+    }
+
+    public String getUser() {
+        return computerHand;
     }
 }

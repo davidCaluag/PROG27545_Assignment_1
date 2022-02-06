@@ -16,7 +16,7 @@ public class HandController {
     public String hand(Model model){
         logger.trace("hand() is called");
 
-        handRoll hand = new handRoll();
+        handRoll hand =new handRoll();
         logger.debug("hand = " + hand);
 
         model.addAttribute("hand", hand);
