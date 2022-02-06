@@ -5,13 +5,17 @@ public class handRoll {
     private final static String[] _hand
             = {"Rock", "Paper", "Scissors"};
 
-    public int RandHand(){
-        int rand = (int) (2 * Math.random());
-        rand += 1;
-        return rand;
+    final private String personHand;
+    final private String computerHand;
+
+    public handRoll() {
+        int personRand = (int) (2 * Math.random());
+        int computerRand = (int) (2 * Math.random());
+        personHand = _hand[personRand];
+        computerHand = _hand[computerRand];
     }
 
-    public int getHand() {
-        return RandHand();
+    public String getHand() {
+        return personHand;
     }
 }

@@ -12,17 +12,17 @@
     <div id="_computer">
         <p>
             AI picked
-            <span class="handName" th:text="${handController.}">Scissors</span>
+            <span class="handName" th:text="${hand.computerHand}">Scissors</span>
         </p>
     </div>
 
     <div id="_user">
         <p>
             You picked
-            <span class="handName" th:text="${domainClass.userHand}">Scissors</span>
+            <span class="handName" th:text="${hand.personHand}">Scissors</span>
         </p>
         <p>
-            <a href="handRoll.html" th:href="@{random-card}">try again</a>
+            <a href="handRoll.html" th:href="@{random-hand}">try again</a>
         </p>
     </div>
 
